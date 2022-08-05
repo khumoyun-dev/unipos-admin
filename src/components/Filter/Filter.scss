@@ -1,0 +1,145 @@
+@import "../../assets/Scss/variables.scss";
+
+.filter-by {
+  position: relative;
+
+  &__select {
+    max-width: 168px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    background-color: $filter-color;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+
+    &-text {
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 18px;
+      margin-right: 20px;
+      color: $color-4;
+      transition: color 0.2s ease;
+    }
+
+    &-arrow {
+      display: block;
+      width: 26px;
+      height: 26px;
+      transform: rotate(180deg);
+      transition: transform 0.3s ease;
+
+      & path {
+        fill: $icon-color;
+      }
+    }
+
+    &--up {
+      background-color: $color-8;
+      border-color: $custom-color;
+
+      .filter-by__select {
+        &-text {
+          color: $custom-color;
+        }
+
+        &-arrow {
+          transform: rotate(0);
+
+          & path {
+            fill: $custom-color;
+          }
+        }
+      }
+    }
+  }
+
+  &__options {
+    width: 364px;
+    max-height: 414px;
+    overflow-y: auto;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: calc(100% + 9px);
+    // left: -50%;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    background-color: $color-8;
+    padding: 6px;
+    box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24),
+      0px 2px 11px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+
+    &--open {
+      display: flex;
+    }
+
+    &-search {
+      width: calc(100% - 12px);
+      margin-top: 6px;
+      margin-bottom: 12px;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        background: none;
+        border: 0;
+        padding: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid $filter-color;
+        margin-left: 6px;
+        margin-right: 6px;
+
+        &-icon {
+          display: block;
+          width: 28px;
+          height: 28px;
+          margin-right: 12px;
+        }
+
+        &-text {
+          flex-grow: 1;
+          text-align: left;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 18px;
+          color: $color-4;
+          letter-spacing: 0.07px;
+          margin-right: 12px;
+        }
+
+        &-arrow {
+          display: block;
+          width: 26px;
+          height: 26px;
+          flex-shrink: 0;
+          transform: rotate(90deg);
+
+          & path {
+            fill: $color-7;
+          }
+        }
+
+        &-inner {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          transform: translateX(100%);
+        }
+      }
+    }
+  }
+}

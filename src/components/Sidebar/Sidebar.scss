@@ -1,0 +1,241 @@
+@import "../../assets/Scss/variables.scss";
+
+.sidebar {
+  position: fixed;
+  z-index: 1200;
+  width: 267px;
+  height: 100vh;
+  background-color: $color-8;
+  overflow-y: scroll;
+
+  &__nav {
+    height: 100%;
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo {
+    width: 266px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    padding: 19.56px 27.55px 20.67px;
+    height: 66px;
+    border-bottom: 1px solid $color-5;
+    background-color: white;
+    border-radius: 1px;
+    // border: 1px solid red;
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 68px;
+    // border: 1px solid red;
+  }
+
+  &__item {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 18px 2px 18px 0px;
+    border-bottom: 1px solid $color-5;
+    width: 100%;
+    max-width: 219px;
+
+    &:last-child {
+      border-bottom: 0;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: #858d96;
+    transition: 0.2s ease;
+    max-width: 100%;
+    position: relative;
+
+    > span {
+      margin-left: 12px;
+      margin-right: auto;
+    }
+
+    &::before {
+      // display: none;
+      position: absolute;
+      z-index: 1;
+      content: url("../../assets/Svgs/Union.svg");
+      transition: 0.2s ease;
+      left: -30px;
+    }
+
+    &:hover {
+      color: $color-2;
+
+      &::before {
+        left: -24px;
+        display: block;
+      }
+
+      &:not(:has(.arrow)) {
+        svg path {
+          fill: $color-2;
+        }
+      }
+    }
+
+    &--active {
+      color: $color-2;
+
+      &::before {
+        left: -24px;
+        display: block;
+      }
+
+      &:not(:has(.arrow)) {
+        svg path {
+          fill: $color-2;
+        }
+      }
+    }
+  }
+
+  .arrow {
+    transform: rotate(180deg);
+    transition: transform 0.3s;
+  }
+
+  .arrow-up {
+    transform: rotate(360deg);
+  }
+
+  .hidden {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: height 0ms 500ms, opacity 500ms 0ms;
+  }
+
+  .dropdown {
+    &__list {
+      height: auto;
+      opacity: 1;
+      transition: height 0ms 0ms, opacity 600ms 0ms;
+      border: 1px solid $color-5;
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 18px;
+    }
+
+    &__item {
+      border-radius: 4px;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+
+      // &:first-child {
+      //   background: rgba(20, 37, 197, 0.04);
+      //   border-radius: 4px;
+      // }
+    }
+
+    &__link {
+      color: #858d96;
+      transition: 0.3s ease;
+
+      > span {
+        display: flex;
+        align-items: center;
+        padding: 10px 0px;
+        transition: 0.1s;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          margin-right: 6px;
+          margin-left: 12px;
+          border-radius: 3px;
+          background-color: #858d96;
+        }
+      }
+
+      &:hover {
+        color: $color-2;
+
+        > span {
+          &::before {
+            background-color: $color-2;
+          }
+
+          background: rgba(20, 37, 197, 0.04);
+          border-radius: 4px;
+        }
+      }
+
+      &--active {
+        color: $color-2;
+
+        > span {
+          &::before {
+            background-color: $color-2;
+          }
+
+          background: rgba(20, 37, 197, 0.04);
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+
+  &__store {
+    padding: 8px;
+    border: 1px solid $color-5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto 20px 12px;
+    font-size: 10px;
+
+    &__img {
+      width: 45px;
+      height: 45px;
+      background-image: url("../../assets/images/StoreImg.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &__details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 100%;
+    }
+
+    &__title {
+      color: #2c2e3d;
+
+      > span {
+        font-size: 16px;
+        font-weight: 700;
+        color: #2c2e3d;
+      }
+    }
+
+    &__category {
+      font-weight: 600;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+  }
+}

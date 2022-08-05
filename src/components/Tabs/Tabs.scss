@@ -1,0 +1,44 @@
+@import "../../assets/Scss/variables.scss";
+
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 9px;
+  margin-right: 9px;
+
+  &-item {
+    padding-bottom: 16px;
+    margin-left: 15px;
+    margin-right: 15px;
+
+    &--active {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: $color-2;
+        border-radius: 6px 6px 0px 0px;
+      }
+    }
+
+    &-button {
+      background: none;
+      border: 0;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      color: $color-7;
+    }
+
+    &--active .card__header-tabs-item-button {
+      color: $color-2;
+    }
+  }
+}

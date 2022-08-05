@@ -1,0 +1,55 @@
+@import "../../assets/Scss/variables.scss";
+
+.pagination {
+  display: flex;
+  margin-left: -6px;
+  margin-right: -6px;
+
+  &__item {
+    display: flex;
+    width: 28px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    color: $pagination-color1;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 13px;
+    margin-left: 6px;
+    margin-right: 6px;
+    cursor: pointer;
+
+    &--active {
+      background-color: $color-2;
+      color: $color-8;
+    }
+
+    &--link {
+      width: 28px;
+      height: 28px;
+      background-color: #ecf1f6;
+
+      &-icon {
+        display: block;
+        width: 16px;
+        height: 16px;
+
+        & path {
+          fill: $color-7;
+        }
+
+        &--prev {
+          transform: rotate(-90deg);
+        }
+
+        &--next {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    &--disabled .pagination__item--link-icon path {
+      fill: $pagination-color2;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+.moreSales {
+  &__wrapper {
+    // width: 380px;
+    // height: 367px;
+    border-radius: 6px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(max-content, 52px) minmax(315px, max-content);
+  }
+
+  &__title {
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(237, 239, 245, 1);
+
+    > span {
+      font-size: 12px;
+      font-weight: 600;
+      color: #3f4254;
+    }
+  }
+
+  &__list {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    padding: 20px 24px 10px;
+    height: 100%;
+    gap: 24px;
+  }
+
+  &__item {
+    // display: flex;
+    // align-items: center;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__staffpart {
+    display: flex;
+    align-items: center;
+    // margin-right: 115px;
+
+    .staff {
+      &_details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 12px;
+      }
+
+      &_name {
+        font-size: 12px;
+        font-weight: 600;
+        color: #252237 !important;
+        margin-bottom: 5px;
+      }
+
+      &_title {
+        font-size: 12px;
+        color: #1425c5;
+      }
+    }
+  }
+
+  &__extrapart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .branchName {
+      font-size: 12px;
+      font-weight: 600;
+      color: #252237 !important;
+      margin-bottom: 5px;
+    }
+
+    .checks {
+      font-size: 12px;
+
+      &__no {
+        color: rgba(0, 0, 0, 0.87);
+      }
+    }
+  }
+}

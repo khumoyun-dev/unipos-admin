@@ -1,0 +1,28 @@
+@import "../../assets/Scss/variables.scss";
+
+.badge {
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-align: center;
+
+  &--active {
+    width: fit-content;
+    background: rgba(39, 174, 96, 0.2);
+    color: $active-color;
+  }
+
+  &--enabled {
+    padding: 5px 7px;
+    width: 66px;
+    background: rgba(36, 117, 240, 0.1);
+    color: #2475f0;
+  }
+
+  &--disabled {
+    padding: 5px 7px;
+    width: 66px;
+    background: #f3f5f9;
+    color: #858d96;
+  }
+}

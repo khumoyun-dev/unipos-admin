@@ -1,0 +1,21 @@
+@import "../../assets/Scss/variables.scss";
+
+.search-input {
+  position: relative;
+  width: 100%;
+  background-color: $products-color1;
+  border: 1px solid $products-color2;
+  border-radius: 6px;
+  padding: 13px 16px 13px 44px;
+  background-repeat: no-repeat;
+  background-position: top 13px left 14px;
+  background-size: 18px;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  color: $color-4;
+
+  &::placeholder {
+    color: $color-6;
+  }
+}

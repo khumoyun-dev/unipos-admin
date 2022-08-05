@@ -1,0 +1,135 @@
+.about-wrapper {
+  display: flex;
+  padding: 24px;
+  gap: 24px;
+
+  .left {
+    width: 67%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .admin-contact-details-edit {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      background: #ffffff;
+      box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24),
+        0px 3px 8px -1px rgba(50, 50, 71, 0.05);
+      border-radius: 6px;
+    }
+
+    .img {
+      width: 150px;
+      height: 150px;
+      background-image: url("../../../assets/images/user-big.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: relative;
+
+      .camera {
+        cursor: pointer;
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+        width: 34px;
+        height: 34px;
+        background: #2475f0;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        background-image: url("../../../assets/images/camera.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 15px 13px;
+      }
+    }
+
+    .admin-details {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .admin-contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: space-between;
+
+        label {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          width: calc(50% - 24px);
+
+          input,
+          select {
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid #e4e6ef;
+            box-sizing: border-box;
+            border-radius: 6px;
+            padding: 12px 14px;
+            outline: none;
+          }
+
+          .input-date, select {
+            background-color: #f5f6f7;
+          }
+        }
+      }
+    }
+  }
+
+  .right {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .permissions-wrp {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24),
+        0px 3px 8px -1px rgba(50, 50, 71, 0.05);
+      border-radius: 6px;
+
+      p {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: -0.24px;
+        color: #252237;
+      }
+
+      .permissions {
+        &-title {
+          padding: 16px 24px 20px 24px;
+          border-bottom: 1px solid #edeff5;
+        }
+
+        &-list {
+          padding: 24px;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
+
+        &-item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          span {
+            cursor: pointer;
+            padding: 6px 24px;
+            border-radius: 4px;
+            background: rgba(36, 117, 240, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
